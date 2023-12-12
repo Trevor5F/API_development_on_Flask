@@ -45,7 +45,6 @@ class AuthService:
 
     def approve_refresh_token(self, refresh_token):
         data = jwt.decode(jwt=refresh_token, key=JWT_SECRET, algorithms=[JWT_ALGORITHM])
-        # username = data.get('username')
         username = data.get('name')
 
         return self.generate_tokens(username, None, is_refresh=True)
