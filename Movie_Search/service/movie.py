@@ -8,9 +8,6 @@ class MovieService:
     def get_one(self, mid):
         return self.dao.get_one(mid)
 
-    # def get_all(self, filters):
-    #     return self.dao.get_all(filters)
-
     def get_all(self, filters=None):
         if filters is None:
             filters = {}
