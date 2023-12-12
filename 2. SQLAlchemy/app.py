@@ -34,9 +34,7 @@ class Order(db.Model):
     price = db.Column(db.Integer)
     customer_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     executor_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-
-    # customer = db.relationship('User', foreign_keys=[customer_id])
-    # executor = db.relationship('User', foreign_keys=[executor_id])
+    
 
 class Offer(db.Model):
     __tablename__ = 'offer'
@@ -44,9 +42,6 @@ class Offer(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     order_id = db.Column(db.Integer, db.ForeignKey('order.id'))
     executor_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-
-    # order = db.relationship('Order')
-    # executor = db.relationship('User')
 
 
 with app.app_context():
