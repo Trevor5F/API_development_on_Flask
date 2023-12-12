@@ -13,15 +13,12 @@ from views.author import auth_ns
 def create_app(config_object):
     app = Flask(__name__)
     app.config.from_object(config_object)
-    # @app.route('/')
-    # def index():
-    #     return render_template('index.html')
     register_extensions(app)
     return app
 
 def register_extensions(app):
     db.init_app(app)
-    api = Api(app,title="Flask Course Project 3", doc="/docs")
+    api = Api(app)
     api.add_namespace(director_ns)
     api.add_namespace(genre_ns)
     api.add_namespace(movie_ns)
