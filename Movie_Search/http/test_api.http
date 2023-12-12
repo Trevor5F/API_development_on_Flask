@@ -1,0 +1,66 @@
+
+GET http://127.0.0.1:10001/directors/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFsZXgiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE2OTgyMjc1NDV9.8TyZ_dbIhzioFbFY88i__i5psKAVj5kkukbDG2ro3lc
+
+###
+
+GET http://127.0.0.1:10001/directors/1
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:10001/genres/
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:10001/genres/1
+Accept: application/json
+
+
+
+
+###
+
+GET http://127.0.0.1:10001/users/2
+Accept: application/json
+
+###
+
+POST http://127.0.0.1:10001/users/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "emailg@mail.ga",
+  "password": "qwer",
+  "name": "Alex",
+  "surname": "Smith"
+}
+
+###
+
+PUT http://127.0.0.1:10001/users/2
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "Alex",
+  "password": "qwer",
+  "role": "admin"
+}
+
+###
+
+PATCH http://127.0.0.1:10001/users/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "password": "qwer"
+}
+
+###
+
+DELETE http://127.0.0.1:10001/users/4

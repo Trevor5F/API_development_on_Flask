@@ -1,0 +1,18 @@
+POST http://127.0.0.1:10001/auth/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "emailg@mail.ga",
+  "password": "qwer"
+}
+
+###
+
+PUT http://127.0.0.1:10001/auth/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFsZXgiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE2OTgyMjc0OTR9.YYNfa7euTzUadO3Bg5xSwFvwUA5CiX2nPxpwivdfyC8"
+}

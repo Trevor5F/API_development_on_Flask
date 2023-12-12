@@ -1,0 +1,39 @@
+POST http://127.0.0.1:5000/users/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "first_name": "Jon",
+  "age": 3
+}
+
+###
+
+PUT http://127.0.0.1:5000/user/31
+Accept: application/json
+Content-Type: application/json
+
+{
+  "first_name": "Маша",
+  "last_name": "Петрова",
+  "age": 18,
+  "email": "email",
+  "role": "role",
+  "phone": "123456"
+}
+
+###
+
+DELETE http://127.0.0.1:5000/user/31
+
+###
+
+PATCH http://127.0.0.1:5000/user/31
+Accept: application/json
+Content-Type: application/json
+
+{
+  "first_name": "Jade"
+}
+
+###
