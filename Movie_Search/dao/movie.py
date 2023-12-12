@@ -12,7 +12,6 @@ class MovieDAO:
         return self.session.query(Movie).get(mid)
 
     def get_all(self, filters):
-        # А еще можно сделать так, вместо всех методов get_by_*
         t = self.session.query(Movie)
 
         if "director_id" in filters:
@@ -28,16 +27,7 @@ class MovieDAO:
             page_num = int(filters["page"])
             t = t.limit(12).offset((page_num - 1) * 12)
         return t.all()
-        # return self.session.query(Movie).all()
 
-    # def get_by_director_id(self, val):
-    #     return self.session.query(Movie).filter(Movie.director_id == val).all()
-    #
-    # def get_by_genre_id(self, val):
-    #     return self.session.query(Movie).filter(Movie.genre_id == val).all()
-    #
-    # def get_by_year(self, val):
-    #     return self.session.query(Movie).filter(Movie.year == val).all()
 
     def create(self, movie_d):
         ent = Movie(**movie_d)
@@ -53,7 +43,6 @@ class MovieDAO:
     def update(self, movie_d):
         movie = self.get_one(movie_d.get("id"))
 
-        # если эти поля прописаны, именно они и будут обновляться
         movie.title = movie_d.get("title")
         movie.description = movie_d.get("description")
         movie.trailer = movie_d.get("trailer")
