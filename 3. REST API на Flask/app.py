@@ -1,5 +1,3 @@
-# app.py
-
 from flask import Flask, request
 from flask_restx import Api, Resource
 from flask_sqlalchemy import SQLAlchemy
@@ -61,29 +59,6 @@ class MoviesView(Resource):
     def get(self):
         director_id = request.args.get('director_id')
         genre_id = request.args.get('genre_id')
-        #         if director_id and genre_id:
-        #             movies_found = Movie.query.filter(Movie.director_id == int(director_id).all(), Movie.genre_id == int(genre_id)).all()
-        #             if not movies_found:
-        #                 return f"Не найдено", 204
-        #             else:
-        #                 return movies_schema.dump(movies_found), 200
-        #
-        #         if director_id:
-        #             movies_found = Movie.query.filter(Movie.director_id == int(director_id)).all()
-        #             if not movies_found:
-        #                 return f"Не найдено", 204
-        #             else:
-        #                 return movies_schema.dump(movies_found), 200
-        #
-        #         if genre_id:
-        #             movies_found = Movie.query.filter(Movie.genre_id == int(genre_id)).all()
-        #             if not movies_found:
-        #                 return f"Не найдено", 204
-        #             else:
-        #                 return movies_schema.dump(movies_found), 200
-        #         else:
-        #             all_movies = Movie.query.all()
-        #             return movies_schema.dump(all_movies), 200
 
         movies = Movie.query
 
@@ -99,9 +74,6 @@ class MoviesView(Resource):
             return "", 204
         else:
             return movies_schema.dump(movies_all), 200
-
-
-# all_movies = Movie.query.all() # или db.session.query(Movie).all()
 
 
 if __name__ == '__main__':
